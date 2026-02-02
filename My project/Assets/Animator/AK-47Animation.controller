@@ -92,7 +92,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fire
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5299874828427137513}
@@ -224,16 +224,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7130020632477960905}
-    m_Position: {x: 480, y: 120, z: 0}
+    m_Position: {x: 250, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7916662262369792324}
-    m_Position: {x: 780, y: 60, z: 0}
+    m_Position: {x: 800, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8299466500622705802}
-    m_Position: {x: 750, y: -80, z: 0}
+    m_Position: {x: 800, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6847686973632133312}
-    m_Position: {x: 640, y: 240, z: 0}
+    m_Position: {x: 640, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7378917933093940289}
     m_Position: {x: 250, y: 20, z: 0}
@@ -242,7 +242,7 @@ AnimatorStateMachine:
     m_Position: {x: 550, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3075971491228333493}
-    m_Position: {x: 290, y: -100, z: 0}
+    m_Position: {x: 250, y: -100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -485,7 +485,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AimFire
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5501674465232447001}

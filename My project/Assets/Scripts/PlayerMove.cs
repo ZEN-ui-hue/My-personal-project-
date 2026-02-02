@@ -4,8 +4,12 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float walkSpeed = 5f;
     [SerializeField] private float runSpeed = 9f;
+    [SerializeField] private float jumpPower = 2f;
 
     private Rigidbody rb;
+    private float rayDistance = 1.5f;
+    private bool isGround;
+    private bool clicked;
 
     public float currentSpeed { get; private set; }
     public bool isRunning { get; private set; }
@@ -13,6 +17,22 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        Debug.DrawRay(ray.origin, ray.direction * rayDistance);
+
+        if (Physics.Raycast(ray, rayDistance))
+        {
+            isGround = true;
+        }
+        else
+        {
+            isGround = false;
+        }
+            clicked = Input.GetKeyDown(KeyCode.Space);
     }
 
     void FixedUpdate()
@@ -39,5 +59,13 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 flatVelocity = new Vector3(velocity.x, 0, velocity.z);
         currentSpeed = flatVelocity.magnitude;
+
+        Vector3 jump = Vector3.up * jumpPower;
+
+        if(clicked && isGround)
+        {
+            rb.AddForce(jump, ForceMode.Impulse);
+            clicked = false;
+        }
     }
 }
