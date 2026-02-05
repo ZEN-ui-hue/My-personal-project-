@@ -4,6 +4,7 @@ public class RandomGenerateMonster : MonoBehaviour
 {
     [SerializeField] private int maxEnemies;
     [SerializeField] private GameObject[] enemiesType;
+    [SerializeField] private LayerMask groundLayer;
 
     private BoxCollider spawnZone;
 
@@ -20,9 +21,31 @@ public class RandomGenerateMonster : MonoBehaviour
 
         for (int i = 0; i < maxEnemies; i++)
         {
-            int randomType = Random.Range(0, enemiesType.Length);
-            Vector3 randomSpawnPosition = new Vector3(Random.Range(minPosX, maxPosX), spawnZone.bounds.min.y,Random.Range(minPosZ, maxPosZ));
-            Instantiate(enemiesType[randomType], randomSpawnPosition, enemiesType[randomType].transform.rotation);
+            bool isGround = false;
+            int count = 0;
+
+            int randomType = 0;
+            Vector3 randomSpawnPosition = Vector3.zero;
+
+            while (!isGround && count < 30)
+            {
+                randomType = Random.Range(0, enemiesType.Length);
+                randomSpawnPosition = new Vector3(Random.Range(minPosX, maxPosX), spawnZone.bounds.max.y, Random.Range(minPosZ, maxPosZ));
+                Ray ray = new Ray(randomSpawnPosition, Vector3.down);
+                Debug.DrawRay(randomSpawnPosition, Vector3.down, Color.red);
+
+                if (Physics.Raycast(ray, out RaycastHit hit, 200, groundLayer))
+                {
+                    randomSpawnPosition = hit.point;
+                    isGround = true;
+                }
+
+                count++;
+            }
+                if (isGround == true)
+                {
+                    Instantiate(enemiesType[randomType], randomSpawnPosition, enemiesType[randomType].transform.rotation);
+                }
         }
     }
 }
