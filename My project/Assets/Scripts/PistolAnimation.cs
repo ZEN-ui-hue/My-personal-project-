@@ -16,10 +16,10 @@ public class PistolAnimation : MonoBehaviour
     {
         animator.SetFloat("Speed", playerMove.currentSpeed);
         animator.SetBool("IsRunning", playerMove.isRunning);
-        animator.SetBool("IsAiming", playerAttack.isAimming);
+        animator.SetBool("IsAiming", playerAttack.isAiming);
         if(Input.GetMouseButtonDown(0))
         {
-            if (playerAttack.isAimming)
+            if (playerAttack.isAiming)
             {
                 animator.Play("AimFire", 0, 0f);
             }

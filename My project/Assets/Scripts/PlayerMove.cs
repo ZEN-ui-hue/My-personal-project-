@@ -50,6 +50,11 @@ public class PlayerMove : MonoBehaviour
 
         isRunning = Input.GetKey(KeyCode.LeftShift) && v > 0;
 
+        if(isRunning)
+        {
+            GetComponent<PlayerAttack>().StopAiming();
+        }
+
         float targetSpeed = isRunning ? runSpeed : walkSpeed;
 
         Vector3 velocity = rb.linearVelocity;

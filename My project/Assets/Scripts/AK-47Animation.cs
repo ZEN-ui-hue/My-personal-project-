@@ -19,16 +19,16 @@ public class AK47Animation : MonoBehaviour
     {
         animator.SetFloat("Speed", playerMove.currentSpeed);
         animator.SetBool("IsRunning", playerMove.isRunning);
-        animator.SetBool("IsAiming", playerAttack.isAimming);
+        animator.SetBool("IsAiming", playerAttack.isAiming);
         if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
 
-            if (playerAttack.isAimming)
+            if (playerAttack.isAiming)
             {
                 animator.Play("AimFire", 0, 0f);
             }
-            else
+            else if(playerMove.isRunning == false)
             {
                 animator.Play("Fire", 0, 0f);
             }
