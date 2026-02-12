@@ -17,5 +17,6 @@ public class MonsterAnimation : MonoBehaviour
     void Update()
     {
         animator.SetFloat("Speed", monsterMove.currentSpeed);
+        animator.SetBool("IsAttack", monsterAttack.isAttack);
     }
 }
