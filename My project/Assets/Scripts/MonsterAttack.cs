@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class MonsterAttack : MonoBehaviour
 {
-    public bool isAttack { get; private set; }
     private Collider monsterCollider;
+    public bool isAttack { get; private set; }
+    private int damage = 5;
 
     void Start()
     {
@@ -15,6 +16,10 @@ public class MonsterAttack : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             isAttack = true;
+
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+            playerHealth.TakeDamage(damage);
         }
     }
 }

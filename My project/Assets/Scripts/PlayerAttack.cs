@@ -13,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
+        Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward * 10, Color.red);
+
         isAiming = Input.GetKey(KeyCode.Mouse1);
         isShortShoot = Input.GetKeyDown(KeyCode.Mouse0);
         isLongShoot = Input.GetKey(KeyCode.Mouse0);

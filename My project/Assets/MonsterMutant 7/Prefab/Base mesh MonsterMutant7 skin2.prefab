@@ -1024,6 +1024,7 @@ GameObject:
   - component: {fileID: -6896032243592628874}
   - component: {fileID: 7733953237023129722}
   - component: {fileID: 2834244182516559759}
+  - component: {fileID: 1760972311416397614}
   m_Layer: 0
   m_Name: Base mesh MonsterMutant7 skin2
   m_TagString: Untagged
@@ -1108,7 +1109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterMove
   runSpeed: 7
-  player: {fileID: 0}
 --- !u!54 &7733953237023129722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1159,6 +1159,18 @@ CapsuleCollider:
   m_Height: 2.09384
   m_Direction: 1
   m_Center: {x: 0, y: 1.0024189, z: 0}
+--- !u!114 &1760972311416397614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290884568573657152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d67395e4d0ac234395dd96816a60f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterHealth
 --- !u!1 &290884568573657154
 GameObject:
   m_ObjectHideFlags: 0

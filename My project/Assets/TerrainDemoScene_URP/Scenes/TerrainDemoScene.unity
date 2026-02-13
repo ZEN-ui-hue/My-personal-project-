@@ -799,7 +799,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &217421267
 Transform:
@@ -6274,6 +6274,7 @@ GameObject:
   - component: {fileID: 1447393768}
   - component: {fileID: 1447393767}
   - component: {fileID: 1447393773}
+  - component: {fileID: 1447393774}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -6430,6 +6431,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5956dbb1c3d9d4b4ea4b4db994035cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PLayerAttack
+--- !u!114 &1447393774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447393766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2948ca568a19d204fab160d34510cbda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  playerHealth: 100
 --- !u!1001 &1498541645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9422,6 +9436,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 257142241851313760, guid: f514be6126461c64eab6f02358f894f3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 257142241851313763, guid: f514be6126461c64eab6f02358f894f3,
         type: 3}
       propertyPath: m_RootOrder
@@ -10219,6 +10238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750904053269136278, guid: f011986bc36690b4d934f2708930e3a1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2750904053269136279, guid: f011986bc36690b4d934f2708930e3a1,
         type: 3}
